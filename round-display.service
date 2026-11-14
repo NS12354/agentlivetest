@@ -1,0 +1,13 @@
+[Unit]
+Description=Round touch display UI
+After=multi-user.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/round-display
+ExecStart=/usr/bin/python3 /home/pi/round-display/app.py
+Restart=on-failure
+SupplementaryGroups=gpio spi i2c
+
+[Install]
+WantedBy=multi-user.target
